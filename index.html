@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gorilla Tag Linux Modding Guide</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="content">
+            <h1># Welcome to the <b>Gorilla Tag Linux Modding Guide</b>! #</h1>
+            <p>This guide aims to get you up and running with Gorilla Tag mods, but on linux.</p>
+            <hr>
+
+            <div class="nocenter">
+                <p>This guide <b>will</b>:</p>
+                <p>* Get you up and running with Gorilla Tag mods on Linux</p>
+                <p>This guide will <b>NOT</b>:</p>
+                <p>* Help you get up and running with VR on linux</p>
+                <p>In other words, this guide will only help you mod Gorilla Tag</p>
+                <p>If you want a guide on Linux VR, check out the <a href="https://lvra.gitlab.io/">LVRA Wiki</a></p>
+                
+                <p>This guide assumes that you have Steam, and SteamVR installed, and that youre logged in.</p>
+                <p>* Hover over an image to expand it.</p>
+
+                <h1># 1. A disclaimer</h1>
+                <hr>
+                <p>This guide will only cover the process of modding the Steam version of Gorilla Tag.<br>The Oculus app, and by extension, the Oculus PCVR version of gtag, <a href="https://appdb.winehq.org/objectManager.php?sClass=application&iId=20173">Isnt supported on Linux.</a></p>
+                <h1># 2. Enable proton</h1>
+                <hr>
+                <p>Valve runs a fork of wine called Proton. It is requited to play Gorilla Tag on Linux, <br> as Gorilla Tag dosen't have a native Linux build.</p>
+                <p>To enable Proton, go to 'Steam > Settings > Compatibility' then make sure 'Enable Steam Play for all other Titles' is enabled.</p>
+                <div class="photoalbum">
+                    <img src="res/2.png" class="photoalbumimage">
+                    <img src="res/3.png" class="photoalbumimage">
+                </div>
+                <p>After this, Install Gorilla Tag, launch it once, and then close it.</p>
+                <h1># 3. Install BepInEx</h1>
+                <hr>
+                <p>Once you've installed Gorilla Tag, you can grab the <a href="https://github.com/BepInEx/BepInEx/releases">latest version of BepInEx 5</a></p>
+                <p>Make sure to get the Windows x64 build of BepInEx, <b>NOT</b> the Linux version.</p>
+                <p>Extract the .zip file, then drop the contents into your Gorilla Tag folder. <br>Your Gorilla tag folder should look like this:</p>
+                <img src="res/4.png">
+                <h1># 4. Install Protontricks</h1>
+                <hr>
+                <p>To make sure BepInEx loads, You'll need to install Protontricks.</p>
+                <p>The recommended way to install Protontricks is from the Flatpak. <br>You'll need to set up your Distro for flatpak, if it isnt already.</p>
+                <p>If the below command fails, you'll need to follow the <a href="https://flathub.org/setup">Setup guide for your Distro.</a></p>
+                <p>If your distro is set up for Flatpak, run this command in your terminal:</p>
+                <p class="commands">flatpak install flathub com.github.Matoking.protontricks</p>
+                <h1># 5. Run Protontricks</h1>
+                <hr>
+                <p>You'll need to run Protontricks now. To do so, Run this command in your terminal:</p>
+                <p class="commands">flatpak run com.github.Matoking.protontricks --gui</p>
+                <p>Pick Gorilla Tag from the list that appears, then click OK.</p>
+                <img src="res/5.png" class="uhh">
+                <p>From the list, select 'Select the default wineprefix', then click OK</p>
+                <img src="res/6.png">
+                <p>From this list, select 'run winecfg', then click OK</p>
+                <img src="res/7.png">
+                <p>In the dialog that appears, go to the "Libraries" tab, under 'New override for library',<br>type 'winhttp' (without quotes, all lowercase), click 'Add', then click 'OK'</p>
+                <img src="res/8.png">
+                <p>After that, close off all protontricks windows.</p>
+                <h1># 6. Post-install</h1>
+                <hr>
+                <p>After you're done with protontricks, launch Gorilla Tag once, then close it.</p>
+                <p>open your Gorilla Tag folder, then go into 'BepInEx > Config > BepInEx.cfg'</p>
+                <p>Under '[Chainloader]', set 'HideManagerGameObject' to 'true'</p>
+                <img src="res/9.png" class="uhh">
+                <p>Save the file. and then you're done!</p>
+                <h1># 7. Troubleshooting</h1>
+                <hr>
+                <h2># Protontricks throws an error when attempting to launch it!</h2>
+                <p>* Make sure that flatpak is set up, or launch the game once, then close it.</p>
+            </div>
+            
+        </div>
+        <div class="disclaimers">
+            <h1>🄯 2024 xenon</h1>
+            <hr class="gray">
+            <p>This product is not affiliated with Gorilla Tag or Another Axiom LLC and is not endorsed or otherwise sponsored by Another Axiom LLC. Portions of the materials contained herein are property of Another Axiom LLC. © 2021 Another Axiom LLC.</p>
+            <p>the colour scheme used in this website is <a href="https://github.com/catppuccin/catppuccin">Catppuccin Mocha Pink</a></p>
+        </div>
+    </body>
+</html>
